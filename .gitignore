@@ -1,0 +1,13 @@
+# Ignore data files
+*.csv
+*.zip
+*.gz
+data/raw/*
+data/processed/*
+
+# Ignore Jupyter checkpoints and cache
+.ipynb_checkpoints
+__pycache__/
+
+# Ignore Mac system files
+.DS_Store
