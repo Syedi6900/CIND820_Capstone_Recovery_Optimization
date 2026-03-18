@@ -1,30 +1,27 @@
-# Post-Default Recovery Optimization: Predicting Collection Outcomes in Unsecured Lending
+# CIND 820 Capstone: Post-Default Recovery Optimization 📉💡
+**Predicting Collection Outcomes in Unsecured Lending**
 
-**Author:** Syed Muzammil Iqbal
-**Student ID:** 501410187
-**Supervisor:** Ceni Babaoglu
-**Course:** CIND 820 Capstone Project 
----
+**Author:** Syed Muzammil Iqbal  
+**Course:** CIND 820 - Big Data Analytics Project  
+**Supervisor:** Ceni Bobaoglu  
+
 ## Project Overview
-In unsecured consumer lending, a "Charged Off" status represents a significant financial loss. Traditional recovery strategies often apply uniform resources to defaulted accounts, ignoring the variability in Loss Given Default (LGD). This project aims to optimize the post-default recovery process by focusing on **Net Recovery** (Gross Recoveries minus Collection Fees).
+In the domain of unsecured consumer lending, the "Charged Off" status represents a critical financial loss event. Traditional credit risk modeling focuses heavily on the Probability of Default (PD), often treating the subsequent recovery process as a static outcome. When Loss Given Default (LGD) is modeled, it typically predicts *gross* recovery, ignoring the significant operational costs and contingency fees associated with third-party collections. 
 
-**Research Goal:** To develop a machine learning framework (using Random Forest Regressors and K-Means Clustering) that predicts the profitability of collection efforts and segments borrowers into actionable recovery personas.
+This project addresses that operational inefficiency by engineering a `Net_Recovery` target variable and developing predictive models to help lenders triage defaulted accounts. By predicting net yield and clustering borrowers into strategic "Recovery Personas," lenders can make data-driven decisions on whether to retain debt for internal collection or sell it immediately to third-party debt buyers.
 
-## Dataset
-The project utilizes the **LendingClub Loan Data (2007–2018)**, sourced from Kaggle.
-* **Filter:** The data is filtered to include only loans with `loan_status == 'Charged Off'`.
-* **Size:** Approximately 268,000 records.
-* **Data Source:** [Link to Kaggle Dataset](https://www.kaggle.com/wordsforthewise/lending-club)
-* *Note: Due to size constraints, the raw data file is not included in this repository.*
+## Dataset Information
+* **Source:** [All Lending Club Loan Data (Kaggle)](https://www.kaggle.com/wordsforthewise/lending-club)
+* **Timeframe:** 2007 - 2018Q4
+* **Scope:** Filtered specifically for loans where `loan_status == 'Charged Off'` (approx. 268,000 records).
+* **Note:** Due to GitHub file size limits, the raw dataset is not uploaded to this repository. Please download `accepted_2007_to_2018Q4.csv` from the Kaggle link above to run the code.
 
-## Repository Structure
-* `notebooks/`: Jupyter notebooks containing exploratory data analysis (EDA), preprocessing steps, and modeling (in progress).
-* `data/`: Placeholders for raw and processed data (local use only).
-
-## Methodology Pipeline
-1.  **Preprocessing:** Imputing missing delinquency data and engineering the `Net_Recovery` target variable.
-2.  **Modeling:** Using Random Forest Regressors to handle non-linear relationships and zero-inflated recovery data.
-3.  **Segmentation:** Applying K-Means clustering to define borrower recovery profiles based on fees, DTI, and recovery potential.
-
----
-*Milestone 2 Interim Report Submission*
+## Repository Contents
+```text
+├── notebooks/
+│   └── Milestone3_InitialResults_Code.ipynb   # Main Google Colab Jupyter Notebook
+├── reports/
+│   ├── Milestone3_InitialResults_Code.pdf     # Compiled HTML/PDF version of the notebook
+│   └── Iqbal_SyedMuzammil_LitReview.docx      # Milestone 2 Literature Review & Methodology
+├── README.md                                  # Project overview and instructions
+└── requirements.txt                           # Python dependencies for reproducibility
