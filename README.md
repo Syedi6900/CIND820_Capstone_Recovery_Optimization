@@ -16,6 +16,18 @@ This project addresses that operational inefficiency by engineering a `Net_Recov
 * **Scope:** Filtered specifically for loans where `loan_status == 'Charged Off'` (approx. 268,000 records).
 * **Note:** Due to GitHub file size limits, the raw dataset is not uploaded to this repository. Please download `accepted_2007_to_2018Q4.csv` from the Kaggle link above to run the code.
 
+* ## Methodology (The 5 Phases)
+1. **Data Loading & EDA:** Exploratory analysis identifying the strict contingency fee structure and the target variable problem.
+2. **Feature Engineering:** Engineering the `Net_Recovery` target variable to account for collection fees and addressing the severe zero-inflation phenomenon.
+3. **Data Cleaning & Preprocessing:** Handling missing values, ordinal encoding for credit grades, and standard scaling.
+4. **Predictive Modeling:** Training a Random Forest Regressor to predict net yield at the point of default, extracting feature importances for algorithmic transparency.
+5. **Strategic Segmentation:** Applying K-Means clustering to segment borrowers into three distinct, actionable business personas based on yield and risk profiles.
+
+## Key Findings & Strategic Action Plans
+* **Persona 0 (High-Yield Whales):** High balances yielding over $3,000. **Action:** Retain internally.
+* **Persona 1 (Small-Balance Nuisances):** Tiny loan balances yielding under $500. **Action:** Package and sell immediately as a low-balance portfolio.
+* **Persona 2 (Toxic Assets):** Subprime borrowers with severe DTI ratios averaging 24.2. **Action:** Cut losses and sell immediately as a deep-subprime portfolio.
+
 ## Repository Contents
 ```text
 ├── notebooks/
